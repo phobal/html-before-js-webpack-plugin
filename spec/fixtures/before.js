@@ -1,0 +1,1 @@
+console.log('add custom files before html-webpack-plugin');
