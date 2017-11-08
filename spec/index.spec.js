@@ -9,6 +9,7 @@ var HtmlBeforeJSWebpackPlugin = require('../');
 
 var OUTPUT_PATH = path.join(__dirname, '../dist');
 var beforeFiles = ['fixture/before.js'];
+var hash = true;
 describe("test", function () {
 
     beforeEach(function (done) {
@@ -23,7 +24,9 @@ describe("test", function () {
             },
             plugins: [
                 new ExtractTextPlugin('style.css'),
-                new HtmlWebpackPlugin(),
+                new HtmlWebpackPlugin({
+                    hash: hash,
+                }),
                 new HtmlBeforeJSWebpackPlugin({
                     paths: beforeFiles
                 }),
@@ -35,8 +38,11 @@ describe("test", function () {
                 expect(er).toBeFalsy();
                 var $ = cheerio.load(data);
                 expect($('script[type="text/javascript"]').attr('src')).toBe(beforeFiles[0]);
+                if (hash) {
+                    expect($('script[type="text/javascript"]').attr('src').indexOf('?')).toBeGreaterThan(-1);
+                }
                 done();
             });
-        })
-    })
-})
+        });
+    });
+});
