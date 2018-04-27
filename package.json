@@ -1,6 +1,6 @@
 {
   "name": "html-before-js-webpack-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "html-webpack-plugin ext",
   "main": "index.js",
   "scripts": {
