@@ -7,6 +7,10 @@
     "test": "jasmine"
   },
   "author": "phobal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phobal/html-before-js-webpack-plugin.git"
+  },
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
