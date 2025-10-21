@@ -2,8 +2,10 @@
   "name": "html-before-js-webpack-plugin",
   "version": "0.0.3",
   "description": "html-webpack-plugin ext",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jasmine"
   },
   "author": "phobal",
@@ -21,5 +23,8 @@
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",
     "webpack": "^3.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
   }
 }
